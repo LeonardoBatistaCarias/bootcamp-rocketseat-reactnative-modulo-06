@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+
+import './config/ReactotronConfig';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +21,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}> Welcome to React Native!</Text>
-      <Text style={styles.welcome}> Abaixo</Text>
+      <Text style={styles.welcome}> testando</Text>
     </View>
   );
 }
