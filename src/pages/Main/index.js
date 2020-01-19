@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/static-property-placement */
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
@@ -28,7 +30,7 @@ export default class Main extends Component {
     title: 'Usuários',
   };
 
-  static propTypoes = {
+  static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func,
     }).isRequired,
@@ -41,6 +43,7 @@ export default class Main extends Component {
   };
 
   async componentDidMount() {
+    console.tron.log(this.props)
     const users = await AsyncStorage.getItem('users');
 
     if (users) {
@@ -52,7 +55,7 @@ export default class Main extends Component {
     const { users } = this.state;
 
     if (prevState.users !== users) {
-      await AsyncStorage.setItem('users', JSON.stringify(users));
+      AsyncStorage.setItem('users', JSON.stringify(users));
     }
   }
 
@@ -79,10 +82,10 @@ export default class Main extends Component {
     Keyboard.dismiss();
   };
 
-  handleNavigate = user => {
+  handleNavigate = (user) => {
     const { navigation } = this.props;
 
-    navigation.navigate('Users', { user });
+    navigation.navigate('User', { user });
   };
 
   render() {
